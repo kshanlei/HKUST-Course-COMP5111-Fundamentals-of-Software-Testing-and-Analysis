@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0035)https://course.cse.ust.hk/comp5111/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>COMP5111: Fundamentals of Software Testing and Analysis</title>
+<style type="text/css"></style><style type="text/css">iframe.dealply-toast { right: -99999px !important; }iframe.dealply-toast.fastestext-revealed { right: 0px !important; margin-bottom: 0px !important; }
+                                   .style1
+                                   {
+                                       font-weight: normal;
+                                   }
+                                   .style2
+                                   {
+                                       text-decoration: underline;
+                                   }
+                                   .style3
+                                   {
+                                       color: #FF3300;
+                                   }
+                                   .auto-style1 {
+                                       width: 100%;
+                                   }
+                                   .auto-style2 {
+                                       font-style: normal;
+                                   }
+                                   .auto-style3 {
+                                       text-align: center;
+                                   }
+                                   </style><script type="text/javascript" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/javascript.js"></script><link href="https://ydlunacommon-cdn.nosdn.127.net/0903d3c0bd4ab1a7e5d61c29b459b83b.svg" rel="preload" as="image"><link href="https://ydlunacommon-cdn.nosdn.127.net/1fcf50513b6d47e71b13e9388f709b3d.svg" rel="preload" as="image"><style>.resizable-component[data-v-761d614a]{position:absolute}.resizable-component>.resizable-r[data-v-761d614a]{cursor:e-resize;height:100%;top:0;width:6px;z-index:90}.resizable-component>.resizable-r[data-v-761d614a],.resizable-component>.resizable-rb[data-v-761d614a]{display:block;position:absolute;right:-6px;touch-action:none;-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none}.resizable-component>.resizable-rb[data-v-761d614a]{bottom:-6px;cursor:se-resize;height:12px;width:12px;z-index:91}.resizable-component>.resizable-b[data-v-761d614a]{cursor:s-resize;left:0;width:100%;z-index:90}.resizable-component>.resizable-b[data-v-761d614a],.resizable-component>.resizable-lb[data-v-761d614a]{bottom:-6px;display:block;height:12px;position:absolute;touch-action:none;-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none}.resizable-component>.resizable-lb[data-v-761d614a]{cursor:sw-resize;left:-6px;width:12px;z-index:91}.resizable-component>.resizable-l[data-v-761d614a]{cursor:w-resize;height:100%;top:0;z-index:90}.resizable-component>.resizable-l[data-v-761d614a],.resizable-component>.resizable-lt[data-v-761d614a]{display:block;left:-6px;position:absolute;touch-action:none;-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;width:12px}.resizable-component>.resizable-lt[data-v-761d614a]{cursor:nw-resize;height:12px;top:-6px;z-index:91}.resizable-component>.resizable-t[data-v-761d614a]{cursor:n-resize;left:0;width:100%;z-index:90}.resizable-component>.resizable-rt[data-v-761d614a],.resizable-component>.resizable-t[data-v-761d614a]{display:block;height:12px;position:absolute;top:-6px;touch-action:none;-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none}.resizable-component>.resizable-rt[data-v-761d614a]{cursor:ne-resize;right:-6px;width:12px;z-index:91}</style><style>:root{--it-color-primary:#3d81d1;--it-color-primary-darker:#316bae;--it-color-white:#fff;--it-color-gray-200:#eff2f7;--it-color-gray-800:#3c4858;--it-color-green:#5cb945;--it-color-red:#e2757a;--it-color-text:#2e3238;--it-color-contrast-low:var(--it-color-gray-200);--it-color-contrast-medium:var(--it-color-gray-800);--it-color-bg-change-highlight:#3d81d126;--it-radius:.3em;--it-radius-md:var(--it-radius,0.25em);--it-font-primary:"Inter",sans-serif;--it-font-size-base:15px;--it-top-toolbar-height:44px;--it-bottom-toolbar-height:50px;--it-space-unit:17px;--it-space-xxxxs:calc(var(--it-space-unit)*0.125);--it-space-xxxs:calc(var(--it-space-unit)*0.25);--it-space-xxs:calc(var(--it-space-unit)*0.375);--it-space-xs:calc(var(--it-space-unit)*0.5);--it-space-sm:calc(var(--it-space-unit)*0.75);--it-space-md:calc(var(--it-space-unit)*1.25);--it-space-lg:calc(var(--it-space-unit)*2);--it-space-xl:calc(var(--it-space-unit)*3.25);--it-space-xxl:calc(var(--it-space-unit)*5.25);--it-space-xxxl:calc(var(--it-space-unit)*8.5);--it-space-xxxxl:calc(var(--it-space-unit)*13.75);--it-scrollbar-width:6px;--it-shadow-xs:0 0.1px 0.3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.12);--it-shadow-sm:0 0.3px 0.4px rgba(0,0,0,.025),0 0.9px 1.5px rgba(0,0,0,.05),0 3.5px 6px rgba(0,0,0,.1);--it-shadow-md:0 0.9px 1.5px rgba(0,0,0,.03),0 3.1px 5.5px rgba(0,0,0,.08),0 14px 25px rgba(0,0,0,.12);--it-shadow-lg:0 1.2px 1.9px -1px rgba(0,0,0,.014),0 3.3px 5.3px -1px rgba(0,0,0,.038),0 8.5px 12.7px -1px rgba(0,0,0,.085),0 30px 42px -1px rgba(0,0,0,.15);--it-shadow-xl:0 1.5px 2.1px -6px rgba(0,0,0,.012),0 3.6px 5.2px -6px rgba(0,0,0,.035),0 7.3px 10.6px -6px rgba(0,0,0,.07),0 16.2px 21.9px -6px rgba(0,0,0,.117),0 46px 60px -6px rgba(0,0,0,.2)}.it-btn,a.it-btn{--it-btn-padding-x:var(--it-space-sm);--it-btn-padding-y:var(--it-space-xxs);--it-btn-radius:999em;--it-btn-icon-size:18px;--it-btn-color:#fff;-webkit-font-smoothing:antialiased;align-items:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:var(--it-color-primary);background-image:none;border:0;border:2px solid var(--it-color-primary);border-radius:0;border-radius:var(--it-btn-radius);box-shadow:none;color:#fff;cursor:pointer;display:inline-flex;font-size:14px;font-weight:400;font-weight:500;height:auto;justify-content:center;line-height:normal;margin:0;padding:var(--it-btn-padding-y) var(--it-btn-padding-x);position:relative;text-align:center;text-decoration:none;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .1s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap;width:auto}.it-btn:disabled,a.it-btn:disabled{opacity:.6;pointer-events:none}.it-btn.it-btn-outline,a.it-btn.it-btn-outline{background-color:transparent;color:var(--it-color-primary)}.it-btn:active,a.it-btn:active{transform:scale(.95)}.it-btn.hover,.it-btn.it-btn-outline.hover,.it-btn.it-btn-outline:active,.it-btn.it-btn-outline:hover,.it-btn:active,.it-btn:hover,a.it-btn.hover,a.it-btn.it-btn-outline.hover,a.it-btn.it-btn-outline:active,a.it-btn.it-btn-outline:hover,a.it-btn:active,a.it-btn:hover{background-color:var(--it-color-primary-darker);border-color:var(--it-color-primary-darker);color:#fff;text-decoration:none}.it-btn>mark,a.it-btn>mark{align-items:center;background:#273444!important;border-radius:2px;bottom:100%;color:var(--it-btn-color);cursor:pointer;font-size:13px;font-style:normal;font-weight:400;left:50%;line-height:1.5;margin:0;padding:3px 8px;pointer-events:none;position:absolute;transform:translate(-50%);transition:visibility 0s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;visibility:hidden;z-index:9999}.it-btn>mark:after,a.it-btn>mark:after{border:4px solid rgba(136,183,213,0);border-top-color:#273444;content:"";height:0;left:50%;margin-left:-4px;pointer-events:none;position:absolute;top:100%;width:0}.it-btn.hover>mark,.it-btn:active>mark,.it-btn:hover>mark,a.it-btn.hover>mark,a.it-btn:active>mark,a.it-btn:hover>mark{transition-delay:1s;visibility:visible}.it-btn.it-btn-wide,a.it-btn.it-btn-wide{padding-left:calc(var(--it-btn-padding-x)*2);padding-right:calc(var(--it-btn-padding-x)*2)}.it-btn-group .it-btn{background-color:#fff;border-color:rgba(0,0,0,.12);border-width:1px;box-shadow:var(--it-shadow-sm);color:var(--it-color-contrast-medium);font-size:16px;height:36px;padding:8px}.it-btn-group .it-btn.it-btn-sm{font-size:13px;height:30px;padding:6px 10px}.it-btn-group .it-btn.it-btn-primary{background-color:var(--it-color-primary);border-color:var(--it-color-primary);color:var(--it-color-white);font-weight:500;padding:8px 16px}.it-btn-group .it-btn.it-btn-primary.hover,.it-btn-group .it-btn.it-btn-primary:active,.it-btn-group .it-btn.it-btn-primary:hover{background-color:var(--it-color-primary-darker);border-color:var(--it-color-primary-darker);color:var(--it-color-white)}.it-btn-group .it-btn:not(:first-child){margin-left:5px}[dir=rtl] .it-btn-group .it-btn:not(:first-child){margin-left:0;margin-right:5px}.it-btn-group .it-btn.hover,.it-btn-group .it-btn:active,.it-btn-group .it-btn:hover{background-color:#dee3ef;color:#2e72c2}.it-btn-group .it-btn.hover>svg use,.it-btn-group .it-btn:active>svg use,.it-btn-group .it-btn:hover>svg use{fill:#2e72c2}.it-btn-group-inline{align-items:center;display:inline-flex;position:relative;vertical-align:middle}.it-btn-group-inline .it-btn{background-color:rgba(229,233,242,0);border-color:rgba(229,233,242,.5);border-width:0;display:inline-flex;padding:6px}.it-btn-group-inline .it-btn.hover,.it-btn-group-inline .it-btn:active,.it-btn-group-inline .it-btn:hover{background-color:rgba(222,227,239,.5);border-color:rgba(222,227,239,.5)}.it-btn-group-inline .it-btn.hover>mark,.it-btn-group-inline .it-btn:active>mark,.it-btn-group-inline .it-btn:hover>mark{transition-delay:1s;visibility:visible}.it-btn-group-inline .it-btn.hover>svg use,.it-btn-group-inline .it-btn:active>svg use,.it-btn-group-inline .it-btn:hover>svg use{fill:#2e72c2}.it-btn-group-inline .it-btn:not(:first-child){margin-left:2px}[dir=rtl] .it-btn-group-inline .it-btn:not(:first-child){margin-left:0;margin-right:2px}.it-btn-group-inline .it-btn>svg,.it-btn-group .it-btn>svg{height:var(--it-btn-icon-size);max-width:none;width:var(--it-btn-icon-size)}.it-btn-group-inline .it-btn>svg:first-child+span,.it-btn-group .it-btn>svg:first-child+span{margin-left:4px}[dir=rtl] .it-btn-group-inline .it-btn>svg:first-child+span,[dir=rtl] .it-btn-group .it-btn>svg:first-child+span{margin-left:0;margin-right:4px}.it-btn-group-inline .it-btn>svg use,.it-btn-group .it-btn>svg use{fill:var(--it-color-contrast-medium)}.it-margin-bottom-base{margin-bottom:var(--it-space-unit)}.it-margin-bottom-sm{margin-bottom:var(--it-space-sm)}.it-margin-bottom-lg,.it-margin-bottom-md{margin-bottom:var(--it-space-md)}.it-margin-top-base{margin-top:var(--it-space-unit)}.it-margin-top-sm{margin-top:var(--it-space-sm)}.it-margin-top-lg,.it-margin-top-md{margin-top:var(--it-space-md)}.it-text-link{color:var(--it-color-primary);cursor:pointer;font-weight:600;text-decoration:none;transition:color .2s}.it-text-link:active,.it-text-link:hover{color:var(--it-color-primary-darker)}:root{--it-editor-width:clamp(28rem,30vw,36rem);--it-editor-height:clamp(14rem,35vh,24rem);--it-editor-padding-top:calc(0.5rem + var(--it-top-toolbar-height));--it-editor-padding-bottom:calc(0.5rem + var(--it-bottom-toolbar-height)*0.5);--it-editor-padding-left:clamp(24px,3%,100px);--it-editor-padding-right:var(--it-editor-padding-left);--it-editor-msg-bottom-padding:10px;--it-editor-color-bg:var(--it-color-white);--it-editor-color-bg-semi-transparent:hsla(0,0%,100%,.9);--it-editor-color-scrollbar-bg:#ddd;--it-editor-added-bg:rgba(92,185,69,.1);--it-editor-added:#5cb945;--it-editor-removed:#cc3434}.it-editor,.it-editor-wrapper{display:flex}.it-editor{background-color:var(--it-editor-color-bg);border:2px solid var(--it-color-primary);border-radius:var(--it-radius);box-shadow:var(--it-shadow-lg);color:var(--it-color-text);flex-direction:column;font-size:var(--it-font-size-base);height:100%;margin-left:auto;margin-top:auto;outline:none;position:relative;transition:width .15s,height .15s,border-color .25s;width:100%}[dir=rtl] .it-editor{margin-left:0;margin-right:auto}.it-editor .it-reqs{display:flex;flex-wrap:wrap;font-size:12px;justify-content:space-between;justify-content:flex-end;margin-right:8px;text-align:right}[dir=rtl] .it-editor .it-reqs{margin-left:8px;margin-right:0}.it-editor .it-reqs>a{margin-left:5px}[dir=rtl] .it-editor .it-reqs>a{margin-left:0;margin-right:5px}.it-editor.it-editor-loading{height:calc(90px + var(--it-editor-msg-bottom-padding));width:320px}.it-editor.it-editor-error{width:320px}.it-editor.it-editor-error.it-editor-error-lg{height:auto;width:350px}.it-editor .it-limit-notice{font-size:13px;padding:10px 20px 20px}.it-editor .it-limit-notice h3{font-size:16px;font-weight:500}.it-editor .it-limit-notice>div{margin-top:12px}.it-editor .it-limit-notice svg{height:auto;margin-bottom:12px;max-width:90px}.it-editor ::-webkit-scrollbar{height:var(--it-scrollbar-width);width:var(--it-scrollbar-width);z-index:99999999}.it-editor ::-webkit-scrollbar-track,.it-editor :hover::-webkit-scrollbar-track{background:var(--it-editor-color-scrollbar-bg)}.it-editor ::-webkit-scrollbar-thumb{background:var(--it-color-primary)}.it-editor ::-webkit-scrollbar-thumb:active,.it-editor ::-webkit-scrollbar-thumb:hover{background:var(--it-color-primary-darker);cursor:-webkit-grab;cursor:grab}.it-editor .noTextDiff span mark{display:none!important}.it-editor .noTextDiff span.api-removed{display:none}.it-editor .noTextDiff span.api-added{background-color:transparent;color:inherit}.it-editor *{font-family:var(--it-font-primary)!important}.it-editor pre{border:0;box-sizing:border-box;flex:1;font-family:inherit!important;font-size:16px;line-height:1.7;margin:0;max-height:100%;outline:none;overflow-x:hidden;overflow-y:scroll;padding:var(--it-editor-padding-top) var(--it-editor-padding-right) var(--it-editor-padding-bottom) var(--it-editor-padding-left);white-space:pre-wrap;width:100%}.it-editor pre span.original>mark{display:none}.it-editor pre span.api-added,.it-editor pre span.api-removed{position:relative}.it-editor pre span.api-added>*,.it-editor pre span.api-removed>*{display:inline-block;position:relative}.it-editor pre span.api-added>*>mark,.it-editor pre span.api-removed>*>mark{align-items:center;border-radius:2px;bottom:100%;box-shadow:var(--it-shadow-md);cursor:pointer;display:flex;left:50%;line-height:1.5;margin:0;padding:0;position:absolute;transform:translate(-50%);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;z-index:9999}.it-editor pre span.api-added>*>mark .accept-icon,.it-editor pre span.api-added>*>mark .reject-icon,.it-editor pre span.api-removed>*>mark .accept-icon,.it-editor pre span.api-removed>*>mark .reject-icon{align-items:center;background:var(--it-editor-color-bg);border-radius:2px;display:inline-flex;padding:4px 8px;position:relative}.it-editor pre span.api-added>*>mark .accept-icon.hover,.it-editor pre span.api-added>*>mark .accept-icon:hover,.it-editor pre span.api-added>*>mark .reject-icon.hover,.it-editor pre span.api-added>*>mark .reject-icon:hover,.it-editor pre span.api-removed>*>mark .accept-icon.hover,.it-editor pre span.api-removed>*>mark .accept-icon:hover,.it-editor pre span.api-removed>*>mark .reject-icon.hover,.it-editor pre span.api-removed>*>mark .reject-icon:hover{background-color:var(--it-color-contrast-low)}.it-editor pre span.api-added>*>mark .accept-icon svg,.it-editor pre span.api-added>*>mark .reject-icon svg,.it-editor pre span.api-removed>*>mark .accept-icon svg,.it-editor pre span.api-removed>*>mark .reject-icon svg{height:22px;max-width:none;pointer-events:none;width:22px}.it-editor pre span.api-added>*>mark .accept-icon svg use,.it-editor pre span.api-added>*>mark .reject-icon svg use,.it-editor pre span.api-removed>*>mark .accept-icon svg use,.it-editor pre span.api-removed>*>mark .reject-icon svg use{fill:var(--it-color-primary)}.it-editor pre span.api-added>*>mark .reject-icon,.it-editor pre span.api-removed>*>mark .reject-icon{border-bottom-left-radius:0;border-left:1px solid var(--it-color-contrast-low);border-top-left-radius:0}.it-editor pre span.api-added>*>mark .accept-icon,.it-editor pre span.api-removed>*>mark .accept-icon{border-bottom-right-radius:0;border-top-right-radius:0}.it-editor pre span.api-added>*>mark>i,.it-editor pre span.api-removed>*>mark>i{font-size:16px;margin-left:3px}.it-editor pre span.api-added>*>mark:after,.it-editor pre span.api-removed>*>mark:after{border:4px solid transparent;border-top:4px solid var(--it-color-contrast-medium);content:"";height:0;left:50%;margin-left:-4px;pointer-events:none;position:absolute;top:100%;width:0}.it-editor pre span.api-added.active,.it-editor pre span.api-removed.active{background-color:var(--it-color-bg-change-highlight)}.it-editor pre span.api-added{background-color:var(--it-editor-added-bg);border-bottom:2px solid var(--it-editor-added);line-height:1.15;position:relative}.it-editor pre span.api-removed{position:relative;text-decoration:line-through}.it-editor pre span.api-removed:before{content:"";pointer-events:none}.it-editor pre span.api-removed>span.word{display:inline}.it-editor pre span.api-removed+span:not(.it-ss){margin-left:4px}.it-editor pre span.api-removed>span:after{color:var(--it-editor-removed);content:attr(data-removedtext);pointer-events:none;text-decoration:line-through}.it-editor pre span.api-added:not(.it-es)+span.api-removed:not(.it-noss),.it-editor pre span.original:not(.it-es)+span.api-removed:not(.it-noss){margin-left:4px}.it-editor .it-editor-top-toolbar{background-image:linear-gradient(to bottom,var(--it-editor-color-bg) 50%,transparent 100%);border-top-left-radius:var(--it-radius);border-top-right-radius:var(--it-radius);height:var(--it-top-toolbar-height);padding:10px 16px 5px;top:0;z-index:99}.it-editor .it-editor-bottom-toolbar{bottom:0;height:var(--it-bottom-toolbar-height);padding:10px 16px;transform:translateY(50%)}.it-editor .it-editor-bottom-toolbar,.it-editor .it-editor-bottom-toolbar:before{border-bottom-left-radius:var(--it-radius);border-bottom-right-radius:var(--it-radius)}.it-editor .it-editor-bottom-toolbar:before{background-image:linear-gradient(to top,var(--it-editor-color-bg) 15%,transparent 100%);content:"";height:80%;left:0;position:absolute;top:10%;transform:translateY(-50%);width:100%}.it-editor .it-editor-error-msg,.it-editor .it-editor-loader{align-items:center;display:flex;font-size:14px;height:100%;justify-content:center;padding:1.2rem;pointer-events:none;position:relative;text-align:center;width:100%;z-index:100}.it-editor .it-editor-error-msg>svg,.it-editor .it-editor-loader>svg{margin-right:10px}[dir=rtl] .it-editor .it-editor-error-msg>svg,[dir=rtl] .it-editor .it-editor-loader>svg{margin-left:10px;margin-right:0}.it-editor .it-editor-error-msg{padding:1.2rem 1.2rem calc(1.2rem + var(--it-editor-msg-bottom-padding))}.it-pointer-events-all{pointer-events:all!important}.it-editor-toolbar{display:flex;justify-content:space-between;left:0;position:absolute;right:var(--it-scrollbar-width);z-index:100}[dir=rtl] .it-editor-toolbar{left:var(--it-scrollbar-width);right:0}.it-editor-close-warning,.it-editor-toolbar .it-editor-drag{height:100%;left:0;position:absolute;top:0;width:100%}.it-editor-close-warning{align-items:center;background-color:var(--it-editor-color-bg-semi-transparent);border-radius:var(--it-radius);display:flex;justify-content:center;overflow:hidden;text-align:center;z-index:100}.it-editor-close-warning .it-editor-drag{height:100%;left:0;position:absolute;top:0;width:100%}</style><style>:root{--it-color-primary:#3d81d1;--it-color-primary-darker:#316bae;--it-color-white:#fff;--it-color-gray-200:#eff2f7;--it-color-gray-800:#3c4858;--it-color-green:#5cb945;--it-color-red:#e2757a;--it-color-text:#2e3238;--it-color-contrast-low:var(--it-color-gray-200);--it-color-contrast-medium:var(--it-color-gray-800);--it-color-bg-change-highlight:#3d81d126;--it-radius:.3em;--it-radius-md:var(--it-radius,0.25em);--it-font-primary:"Inter",sans-serif;--it-font-size-base:15px;--it-top-toolbar-height:44px;--it-bottom-toolbar-height:50px;--it-space-unit:17px;--it-space-xxxxs:calc(var(--it-space-unit)*0.125);--it-space-xxxs:calc(var(--it-space-unit)*0.25);--it-space-xxs:calc(var(--it-space-unit)*0.375);--it-space-xs:calc(var(--it-space-unit)*0.5);--it-space-sm:calc(var(--it-space-unit)*0.75);--it-space-md:calc(var(--it-space-unit)*1.25);--it-space-lg:calc(var(--it-space-unit)*2);--it-space-xl:calc(var(--it-space-unit)*3.25);--it-space-xxl:calc(var(--it-space-unit)*5.25);--it-space-xxxl:calc(var(--it-space-unit)*8.5);--it-space-xxxxl:calc(var(--it-space-unit)*13.75);--it-scrollbar-width:6px;--it-shadow-xs:0 0.1px 0.3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.12);--it-shadow-sm:0 0.3px 0.4px rgba(0,0,0,.025),0 0.9px 1.5px rgba(0,0,0,.05),0 3.5px 6px rgba(0,0,0,.1);--it-shadow-md:0 0.9px 1.5px rgba(0,0,0,.03),0 3.1px 5.5px rgba(0,0,0,.08),0 14px 25px rgba(0,0,0,.12);--it-shadow-lg:0 1.2px 1.9px -1px rgba(0,0,0,.014),0 3.3px 5.3px -1px rgba(0,0,0,.038),0 8.5px 12.7px -1px rgba(0,0,0,.085),0 30px 42px -1px rgba(0,0,0,.15);--it-shadow-xl:0 1.5px 2.1px -6px rgba(0,0,0,.012),0 3.6px 5.2px -6px rgba(0,0,0,.035),0 7.3px 10.6px -6px rgba(0,0,0,.07),0 16.2px 21.9px -6px rgba(0,0,0,.117),0 46px 60px -6px rgba(0,0,0,.2)}.it-btn,a.it-btn{--it-btn-padding-x:var(--it-space-sm);--it-btn-padding-y:var(--it-space-xxs);--it-btn-radius:999em;--it-btn-icon-size:18px;--it-btn-color:#fff;-webkit-font-smoothing:antialiased;align-items:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:var(--it-color-primary);background-image:none;border:0;border:2px solid var(--it-color-primary);border-radius:0;border-radius:var(--it-btn-radius);box-shadow:none;color:#fff;cursor:pointer;display:inline-flex;font-size:14px;font-weight:400;font-weight:500;height:auto;justify-content:center;line-height:normal;margin:0;padding:var(--it-btn-padding-y) var(--it-btn-padding-x);position:relative;text-align:center;text-decoration:none;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .1s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap;width:auto}.it-btn:disabled,a.it-btn:disabled{opacity:.6;pointer-events:none}.it-btn.it-btn-outline,a.it-btn.it-btn-outline{background-color:transparent;color:var(--it-color-primary)}.it-btn:active,a.it-btn:active{transform:scale(.95)}.it-btn.hover,.it-btn.it-btn-outline.hover,.it-btn.it-btn-outline:active,.it-btn.it-btn-outline:hover,.it-btn:active,.it-btn:hover,a.it-btn.hover,a.it-btn.it-btn-outline.hover,a.it-btn.it-btn-outline:active,a.it-btn.it-btn-outline:hover,a.it-btn:active,a.it-btn:hover{background-color:var(--it-color-primary-darker);border-color:var(--it-color-primary-darker);color:#fff;text-decoration:none}.it-btn>mark,a.it-btn>mark{align-items:center;background:#273444!important;border-radius:2px;bottom:100%;color:var(--it-btn-color);cursor:pointer;font-size:13px;font-style:normal;font-weight:400;left:50%;line-height:1.5;margin:0;padding:3px 8px;pointer-events:none;position:absolute;transform:translate(-50%);transition:visibility 0s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;visibility:hidden;z-index:9999}.it-btn>mark:after,a.it-btn>mark:after{border:4px solid rgba(136,183,213,0);border-top-color:#273444;content:"";height:0;left:50%;margin-left:-4px;pointer-events:none;position:absolute;top:100%;width:0}.it-btn.hover>mark,.it-btn:active>mark,.it-btn:hover>mark,a.it-btn.hover>mark,a.it-btn:active>mark,a.it-btn:hover>mark{transition-delay:1s;visibility:visible}.it-btn.it-btn-wide,a.it-btn.it-btn-wide{padding-left:calc(var(--it-btn-padding-x)*2);padding-right:calc(var(--it-btn-padding-x)*2)}.it-btn-group .it-btn{background-color:#fff;border-color:rgba(0,0,0,.12);border-width:1px;box-shadow:var(--it-shadow-sm);color:var(--it-color-contrast-medium);font-size:16px;height:36px;padding:8px}.it-btn-group .it-btn.it-btn-sm{font-size:13px;height:30px;padding:6px 10px}.it-btn-group .it-btn.it-btn-primary{background-color:var(--it-color-primary);border-color:var(--it-color-primary);color:var(--it-color-white);font-weight:500;padding:8px 16px}.it-btn-group .it-btn.it-btn-primary.hover,.it-btn-group .it-btn.it-btn-primary:active,.it-btn-group .it-btn.it-btn-primary:hover{background-color:var(--it-color-primary-darker);border-color:var(--it-color-primary-darker);color:var(--it-color-white)}.it-btn-group .it-btn:not(:first-child){margin-left:5px}[dir=rtl] .it-btn-group .it-btn:not(:first-child){margin-left:0;margin-right:5px}.it-btn-group .it-btn.hover,.it-btn-group .it-btn:active,.it-btn-group .it-btn:hover{background-color:#dee3ef;color:#2e72c2}.it-btn-group .it-btn.hover>svg use,.it-btn-group .it-btn:active>svg use,.it-btn-group .it-btn:hover>svg use{fill:#2e72c2}.it-btn-group-inline{align-items:center;display:inline-flex;position:relative;vertical-align:middle}.it-btn-group-inline .it-btn{background-color:rgba(229,233,242,0);border-color:rgba(229,233,242,.5);border-width:0;display:inline-flex;padding:6px}.it-btn-group-inline .it-btn.hover,.it-btn-group-inline .it-btn:active,.it-btn-group-inline .it-btn:hover{background-color:rgba(222,227,239,.5);border-color:rgba(222,227,239,.5)}.it-btn-group-inline .it-btn.hover>mark,.it-btn-group-inline .it-btn:active>mark,.it-btn-group-inline .it-btn:hover>mark{transition-delay:1s;visibility:visible}.it-btn-group-inline .it-btn.hover>svg use,.it-btn-group-inline .it-btn:active>svg use,.it-btn-group-inline .it-btn:hover>svg use{fill:#2e72c2}.it-btn-group-inline .it-btn:not(:first-child){margin-left:2px}[dir=rtl] .it-btn-group-inline .it-btn:not(:first-child){margin-left:0;margin-right:2px}.it-btn-group-inline .it-btn>svg,.it-btn-group .it-btn>svg{height:var(--it-btn-icon-size);max-width:none;width:var(--it-btn-icon-size)}.it-btn-group-inline .it-btn>svg:first-child+span,.it-btn-group .it-btn>svg:first-child+span{margin-left:4px}[dir=rtl] .it-btn-group-inline .it-btn>svg:first-child+span,[dir=rtl] .it-btn-group .it-btn>svg:first-child+span{margin-left:0;margin-right:4px}.it-btn-group-inline .it-btn>svg use,.it-btn-group .it-btn>svg use{fill:var(--it-color-contrast-medium)}.it-margin-bottom-base{margin-bottom:var(--it-space-unit)}.it-margin-bottom-sm{margin-bottom:var(--it-space-sm)}.it-margin-bottom-lg,.it-margin-bottom-md{margin-bottom:var(--it-space-md)}.it-margin-top-base{margin-top:var(--it-space-unit)}.it-margin-top-sm{margin-top:var(--it-space-sm)}.it-margin-top-lg,.it-margin-top-md{margin-top:var(--it-space-md)}.it-text-link{color:var(--it-color-primary);cursor:pointer;font-weight:600;text-decoration:none;transition:color .2s}.it-text-link:active,.it-text-link:hover{color:var(--it-color-primary-darker)}.it-editor.it-editor-onboarding{--it-editor-onboarding-list-bullet-size:20px;bottom:48px;font-size:14px;font-weight:500;height:auto;padding:20px;position:absolute;right:32px;width:315px}.it-editor.it-editor-onboarding .it-editor-bottom-toolbar:before{display:none}.it-editor.it-editor-onboarding>main>p{margin-bottom:10px;margin-top:20px;text-align:center}.it-editor.it-editor-onboarding>main>p>span{border:1px solid #ccc;border-radius:6px;font-weight:700;margin:0 2px;padding:3px 5px}.it-editor.it-editor-onboarding header{border-bottom:1px solid #ddd;display:flex;margin-bottom:12px;padding-bottom:12px}.it-editor.it-editor-onboarding header h3{font-size:1.15em;margin:0}.it-editor.it-editor-onboarding header p{margin:3px 0 0}.it-editor.it-editor-onboarding header div:first-child{min-width:calc(var(--it-editor-onboarding-list-bullet-size)*1.5)}.it-editor.it-editor-onboarding header div:first-child svg{height:24px;width:24px}.it-editor-onboarding-list{counter-reset:item;font-size:.95em;margin-left:0;padding-left:0}.it-editor-onboarding-list li{align-items:center;display:flex;margin-bottom:8px}.it-editor-onboarding-list li:before{align-items:center;background-color:#4b5058;border-radius:999rem;color:#f4f4f6;content:counter(item);counter-increment:item;display:inline-flex;font-size:.9em;font-weight:600;height:var(--it-editor-onboarding-list-bullet-size);justify-content:center;margin-right:calc(var(--it-editor-onboarding-list-bullet-size)*.5);min-width:var(--it-editor-onboarding-list-bullet-size)}</style><style>@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap);</style><style>#it-editor{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;bottom:2rem;left:1rem;pointer-events:none;position:fixed;right:1rem;top:1rem;z-index:9999999}#it-editor>div{height:100%;pointer-events:none;width:100%}#it-editor>div>*{pointer-events:all}#it-editor *{box-sizing:border-box}#it-editor h1,#it-editor h2,#it-editor h3,#it-editor h4{font-weight:500}.fadeup-enter-active,.fadeup-leave-active{transform:translateY(0);transition:opacity .1s ease,transform .1s}.fadeup-enter-from,.fadeup-leave-to{opacity:0;transform:translateY(1rem)}.fade-enter-active,.fade-leave-active{transition:opacity .1s}.fade-enter-from,.fade-leave-to{opacity:0}</style></head>
+
+<body text="#000000" bgcolor="#ffffff" link="#005bb7" vlink="#005bb7">
+
+<p>
+<font face="helvetica">
+    <table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr>
+    <td align="center"><img src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/COMP5111-Attribute-SBTS2018-defect.png" height="150" width="150"></td>
+    <td align="center" valign="bottom"> <h1>COMP5111: Fundamentals of Software 
+    Testing and Analysis (Spring 2024)</h1>
+        <p>&nbsp;</p>
+    </td></tr>
+<!--td><img height="50" width="50" src="CSlogo.gif"></td></tr> -->
+</tbody></table>
+    <table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%" style="font-weight: 700"><nobr><big>Important Dates</big></nobr></td>
+</tr>
+</tbody></table>
+</font></p><ul><font face="helvetica">
+    <li>Mar 02 (Sat): Reading assignment - paper selection at <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/sccheung_connect_ust_hk/ERrOzfxjDPxDnN7RKy_4768BaHbA5qZxJ-sAIfIVqV259w?e=eygHMY">online spreadsheet</a> and discussion topic creation at Canvas due</li>
+    <li>Mar 16 (Sat): Programming assignment 1 submission due</li>
+    <li>Apr 10 (Wed): Reading assignment - reading report submission due</li>
+    <li>Apr 11 (Thu) - 21 (Sun): Reading assignment - reading report discussion due</li>
+    <li>Apr 22, Apr 24, Apr 29, May 4*, May 8: Reading assignment - presentation (compulsory participation in all presentations)</li>
+    <li>May 10 (Fri): Programming assignment 2 submission due</li>
+    <li>May 10 (Fri): Reading assignment - presentation slides due (classmates are welcome to submit a discussion report optionally if they want to let the teaching team know certain irregularities or issues occuring at the report discussion.)</li>
+    <!-- <li>May 25 (Thu): Final Examination, 12:30-15:30, G009A, CYT Bldg</li> -->
+    <!-- <li><span class="style3">May 24: Final Examination (8:30-10:30) online over Canvas and Zoom. Please observe the examination instructions <a href="logistics-0426.pdf">here</a>.</span></li>-->
+    <!-- <li>May 18 (Tuesday, 16:30 - 19:30): Online final examinaton (open hard copy notes). 
+        Please observe the examination instructions <a href="logistics-0426.pdf">here</a>.</li>
+</ul>
+<hr />
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="helvetica">Announcements</font></b></big></nobr></td>
+</tr>
+</tbody></table>
+
+<ul>
+<!-- <li>May 20: Please refer to the instructions for final examination 
+    <a href="https://hkustconnect-my.sharepoint.com/:w:/g/personal/mlick_connect_ust_hk/EamV5d0KoBxPs7KLUJWO8EIBZade4wsRQkvPyktkMMoOmQ?e=P2qPrF">here</a>.</li>
+<li>Feb 1: There will be an online final examination in the course. Please make sure that you will be able to participate in the examination on CANVAS during the examination week before registering this course.</li>
+<li>Feb 1: Lectures will be delivered online on Zoom starting from Feb 1 until 
+    further notice from University. Students in mainland may consider to set up an internet proxy to 
+    speed up their web access from mainland China:
+    <a href="https://itsc.ust.hk/services/it-infrastructure/proxy">
+    https://itsc.ust.hk/services/it-infrastructure/proxy</a>.&nbsp;Please attend the lectures at Zoom meeting ID 995 1518 7537 passcode &quot;5111&quot;. Remember to join online lectures only with an account registered at Zoom using 
+    ITSC email address through Canvas or hkust.zoom.com.cn as follows. <p />
+    <img src="zoomsignon.PNG" height="235" width="648"> <p />
+        Remeber to enable video when attending the online lectures. Online lectures will be recorded and made available under Zoom meeting at Canvas. 
+    </li>
+<li>May 24: TA's implementation of assignment 2 has been released. Please refer to the assignment section below for details.</li>
+<li>Apr 15: TA's implementation of assignment 1 has been released. Please refer to the assignment section below for details.</li>
+<li><span class="style3">Mar 25: Final examination will take place online over Canvas and Zoom on May 24 (Tue), 8:30-10:30. Please observe the examination instructions <a href="logistics-0426.pdf">here</a>. The examination will be open hardcopy notes.</span></li>
+
+<li>Apr 23: Please post your questions during class presentation at the following Zoom session. <br />
+   https://hkust.zoom.us/j/95408553240?pwd=R2ZqVkp5a3BNQ1g1L2pnRGVBS3RZZz09
+<br />
+   Meeting ID: 954 0855 3240
+   Passcode: 5111
+
+</li>
+<li>Mar 23: Final Examination, May 25 (Thu), 12:30-15:30, G009A, CYT Bldg
+<li>Mar 17: Assignment 2 has been released. Please refer to the assignment section below for details.</li>
+<li>Feb 14: The instructor has recently tested Covid positive and developed obvious symptoms. The class on Feb 15 (Wed) will be offered in mixed mode with the instructor joining the class over Zoom. Students may join the class either face-to-face in Room 6591 or over Zoom at:Links to an external site.
+
+https://hkust.zoom.us/j/95408553240?pwd=R2ZqVkp5a3BNQ1g1L2pnRGVBS3RZZz09.
+
+Meeting ID: 954 0855 3240  Passcode: 5111
+
+TA will help set up the class in mixed mode. 
+</li>
+<li>Feb 7: Assignment 1 has been released. Please refer to the assignment section below for details.</li>
+<li>Feb 1: We will use Canvas for assignment submissions. While working on the assignments, you are highly encouraged to continually commit your code updates to a private online repository such as Github or Gitlab. Please be reminded to observe the deadlines and submit the correct version. Late submission or resubmission after deadline will not be accepted. If in doubt, please double check at Canvas the version that you have submitted. If there are any problems in accessing Canvas, please contact with ITSC, or refer to <a href="https://itsc.ust.hk/services/it-infrastructure/proxy">Here</a></li>
+<li>Feb 1: We did experimentation during the Winter break on the open-source programming tools and environments used in this course. We recommend using Java 11 (SE), Eclipse 2022-12, Randoop 4.3.1, Evosuite 1.2.0, GZoltar 1.7.2 for the programming assignments. Students may use other versions if they prefer doing so, but grading will be based on our recommended tools versions. During our experiments, we found EclEmma in Eclipse provided more detailed coverage information than Jacoco in IntelliJ. Detailed coverage information is useful to automated fault localization.</li>
+
+    <li>Apr 14: Final examination will take place on May 21 (Tue) 4:30pm - 7:00pm in Room 2465 (updated May 17).</li>
+    <li>Jan 30: Two programming assignments and one reading assignment have been released.</li>
+    <li>Jan 30: Please reserve the last <span class="style4">five</span> lectures (Apr 17, 24, 26; May 3, 8) for reading 
+        assignment presentations. Attendance of all presentations is compulsory. 
+        (Updated on Mar 10)</li>
+    <li>Jan 30: Please use either your ITSC or CSE email account for all communications 
+        within this course so that we can recognize the email is sent from our students.</li>
+    <li>Jan 30: We will have a workshop in the class on Feb 27. The workshop materials are available
+        <a href="http://sccpu2.cse.ust.hk/comp5111assignments/soot_tutorial.zip">here</a> (updated on Feb 27).</li>
+    <li>Jan 30: The workshop and programming assignments will be based on
+    <a href="https://www.eclipse.org/downloads/">Eclipse Standard</a> and Java SE 8 SDK.</li>
+-->
+    <li>Although some software tools that we introduce in the course may happen to work with more recent Java versions, their official releases target Java 11. You may refer to the website of these tools for further information. We choose open-source tools so that you can freely use and customize them to suit your needs in future. 
+    Like most open-source tools developed by the research community, the 
+    documentation of some tools may not be well maintained. We will organize a tutorial to help you get started.&nbsp;</li>
+    <li>You are prohibited from using generative artificial intelligence (AI) tools such as ChatGPT, Claude, Gemini, and Copilot on the Reading assignment. 
+        <!-- You cannot use any automatic literature summarization tools or chat bots such as ChatGPT or Copilot in course assignments. -->
+    </li>
+    <li>No classes on Mar 25 and 27. Classes will be made up on May 4.</li>
+</font></ul><font face="helvetica">
+</font>
+
+
+<hr>
+<a name="course">
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="arial,helvetica">Course Information</font></b></big></nobr></td>
+</tr></tbody></table>
+</a>
+<p></p><blockquote>
+<font face="helvetica">
+<h3>Instructor and Teaching Assistant</h3>
+        <table class="auto-style1">
+            <tbody><tr>
+                <td align="center"><img src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/scc.png" height="170" width="170"></td>
+                <td align="center"><img src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/songqiang.png" height="170" width="170"></td>
+            </tr>
+            <tr>
+                <td align="center"><font face="helvetica">
+<a href="http://www.cse.ust.hk/~scc">Shing-Chi Cheung</a>&nbsp;<b><br>
+                    Room</b>: 2534<b> Phone</b>: 23587016<b>
+                    <br>
+                    Email</b><span>: <a class="smarterwiki-linkify" href="mailto:scc@cse.ust.hk;">scc@cse.ust.hk</a> </span></font></td>
+                <td align="center">
+<font face="helvetica">
+                    <span><a href="https://imcsq.github.io/">Songqiang Chen</a><strong>&nbsp;<br>
+                    Room</strong>: 3663 
+    (via Room 3661)</span><b>&nbsp;<br>
+                    Email: </b>
+                    <a href="mailto::i9s.chen@connect.ust.hk">i9s.chen@connect.ust.hk</a><span><a class="smarterwiki-linkify" href="mailto::i9s.chen@connect.ust.hk"></a>
+
+</span></font>
+                </td>
+            </tr>
+        </tbody></table>
+<hr>
+<h3>Course Description</h3>
+<blockquote>
+This is a postgraduate core course counted towards the area of software technology. The goal of this course is to introduce the principles of various automated analysis 
+    and testing techniques as well as the ways that they can be used to manage 
+    software code quality. Students will acquire fundamental knowledge of program abstraction, verification, testing, coverage, analysis, reliability, and fault detection. The course will also discuss how to carry out the empirical experimentation for program analysis and testing. Wherever applicable, concepts will be complemented by industry adoption and tools developed in academia and industry. This enables students to understand the maturity and limitations of various techniques discussed in the course and put them in practice. 
+    The course requires prior programming knowledge in Java. <strong>You are prohibited from using generative artificial intelligence (AI) to produce any materials or content for the reading assignment. </strong>
+</blockquote>
+<hr>
+<h3>Schedule &amp; Venue</h3>
+<blockquote>
+    Monday &amp; Wednesday 9:00 - 10:20, Room 6591<br>
+    Office Hours: Monday &amp;&nbsp;Wednesday 10:20 - 10:50<br>
+    Classroom: 6591 (reachable by Lift 29/30, 6th floor)</blockquote>
+<hr>
+<h3>Course Learning Outcomes</h3>
+<blockquote>
+    The intent of this course is to provide students with the fundamentals of software analysis and testing techniques. They will learn these techniques from three perspectives: concepts, tool support, and industry adoption. T<font face="helvetica">opics will be explored at different levels of depths. 
+    </font>Following the first perspective, students will study the quality issues arising 
+    from software maintenance and the theories to address them. 
+    Following the second perspective, students will study how these techniques are supported by tools and their engineering. Many of these tools are adopted by the software community to assure code quality. Following the third perspective, students will understand the issues that arise when applying these techniques to real-life software projects, and their adoption by the community.<br>
+    <br>
+    Upon completion of this course, students will be able to apply the fundamental knowledge of fault analysis, test coverage, program instrumentation, test generation, fault localization, mutation analysis, program repair, pointer analysis, program abstraction, mining software repositories, large language models, and vulnerability analysis. 
+    Students will also be able to point out the maturity and limitations of various 
+    analysis and testing techniques. <strong> This course assumes prior knowledge of Java Programming.</strong> 
+    <br>
+</blockquote>
+<h3>Topics</h3>
+
+<!--<blockquote> -->
+    <blockquote><i>Notes are subject to minor updates, and will be finalized two days before class. Lecture videos are available under Zoom on Canvas. <!-- <a href="videos.html">here</a>.--></i></blockquote>
+<ul>
+        <li>Introduction (<a href="https://course.cse.ust.hk/comp5111/slides/10-IntroductionToSoftwareAnalysis.pdf">slides</a>)
+    <!-- <a href="codehunt/2016/2016F-CodeHunt2.JPG">winner board 2nd</a>, 
+    <a href="codehunt/2016/2016F-CodeHunt5.jpg">winner board 5th</a>)--> 
+    [week 1]</li>
+        <li>
+<font face="helvetica">
+            Dynamic analysis with unit testing - JUnit (<a href="https://course.cse.ust.hk/comp5111/slides/15-JUnit.pdf">slides</a>) [weeks 1, 2]<br> 
+    - <a href="https://course.cse.ust.hk/comp5111/slides/JUnit5Demo.zip">class examples</a>, 
+    <a href="https://course.cse.ust.hk/comp5111/slides/JUnit5WorkshopWithSoln.zip">in-class exercise</a></font></li>
+        <li><font face="helvetica">Automated test generation: random-based with feedback directed - Randoop (<a href="https://course.cse.ust.hk/comp5111/slides/16-Random%20Testing.pdf">slides</a>) [week 2]<br>- <a href="https://randoop.github.io/randoop/">user manual</a>, 
+        <a href="https://course.cse.ust.hk/comp5111/slides/Random.zip">class examples</a> (Java 11)</font></li>
+        <li>
+<font face="helvetica">
+            Soot Tutorial (please refer to the materials under the Coursework below) [week 2] (Java 11)</font></li><li><font face="helvetica">
+            Basic concepts of testing &amp; coverage (<a href="https://course.cse.ust.hk/comp5111/slides/12-Overview%20of%20Testing.pdf">slides1</a>, 
+    <a href="https://course.cse.ust.hk/comp5111/slides/13-StructuralCoverage.pdf">slides2</a>) [week 3]<br>- Cruise (<a href="https://course.cse.ust.hk/comp5111/slides/CruiseWithBugs.zip">Buggy</a>,
+    <a href="https://course.cse.ust.hk/comp5111/slides/CruiseWithFix.zip">Fix</a>)</font></li><li>Code coverage and instrumentation (<a href="https://course.cse.ust.hk/comp5111/slides/14-CodeCoverage.pdf">slides</a>) [week 
+            4]</li>
+<font face="helvetica">
+    </font>
+        <li>Automated test generation: constraint-based with dynamic symbolic analysis (<a href="https://course.cse.ust.hk/comp5111/slides/17-SymbolicExecution.pdf">slides</a>) [week 4]<br>- <a href="https://course.cse.ust.hk/comp5111/slides/Search.zip">class examples</a> (Java 11), 
+        <a href="https://course.cse.ust.hk/comp5111/readings/symbolic%20execution%20for%20software%20testing.cacm.pdf">further readings</a></li>
+        <li>Fault-based approach with mutation techniques (<a href="https://course.cse.ust.hk/comp5111/slides/19-Mutation.pdf">slides</a>) [week 5]<br>- <a href="https://course.cse.ust.hk/comp5111/slides/Mutation.zip">class example</a> (Java 11,
+        <a href="http://pitest.org/">Pitclipse</a> / further readings:
+        <a href="https://course.cse.ust.hk/comp5111/readings/Mutation%20Testing%20Survey.pdf">survey</a>, 
+        <a href="https://course.cse.ust.hk/comp5111/Course/Notes/Guided%20Mutation%20Testing%20for%20JavaScript%20Web%20Applications.pdf">Javascript Web Applications</a></li>
+        <li>Automated test generation: search-based - EvoSuite (<a href="https://course.cse.ust.hk/comp5111/slides/20-EvoSuite.pdf">slides</a>) 
+        [week 5]</li>
+        <li><font face="helvetica">Automated fault localization (<a href="https://course.cse.ust.hk/comp5111/slides/18-Fault%20Localization.pdf">slides</a>) [week 6]<br>- <a href="https://course.cse.ust.hk/comp5111/slides/FaultLocalization.zip">class example</a> (Java 11) / 
+        <a href="http://www.gzoltar.com/#quick_reference_manual">GZoltar</a> /
+        <a href="https://github.com/GZoltar/gzoltar/releases/tag/v1.7.2">GZoltar download</a></font></li>
+        <li>Automated program repair (<a href="https://course.cse.ust.hk/comp5111/slides/21-Automated%20Program%20Repair.pdf">slides</a>) [week 
+            6, 7]</li>
+        <li>Object-oriented &amp; Regression-based approach (<a href="https://course.cse.ust.hk/comp5111/slides/22-RegressionTesting.pdf">slides</a>) [week 7]</li>
+<font face="helvetica">
+        <li>Automated pattern-based static analysis - SpotBugs (<a href="https://course.cse.ust.hk/comp5111/slides/11-PatternBasedAnalysis.pdf">slides</a>) 
+    [week 8]</li>
+    </font>
+        <li><font face="helvetica">Pointer analysis (<a href="https://course.cse.ust.hk/comp5111/slides/23-Pointer%20Analysis.pdf">slides</a>) [week 
+            8]</font></li>
+        <li>Program slicing &amp; taint analysis (<a href="https://course.cse.ust.hk/comp5111/slides/24-Slicing.pdf">slides</a><!-- / video:
+            <a href="http://www.cse.ust.hk/~scc/csd_only/Slicing-1.mp4" target="_blank">part-1</a> & 
+            <a href="http://www.cse.ust.hk/~scc/csd_only/Slicing-2.mp4" target="_blank">part-2</a> -->) [week 9]</li>
+        <li><font face="helvetica">
+            Mining software repositories </font>
+            (<a href="https://course.cse.ust.hk/comp5111/slides/26-Mining%20of%20Public%20Software%20Repository.pdf">slides</a>) <!-- / video: <a href="http://www.cse.ust.hk/~scc/csd_only/msr-1.mp4" target="_blank">part-1</a> & 
+            <a href="http://www.cse.ust.hk/~scc/csd_only/msr-2.mp4" target="_blank">part-2</a>) -->
+        [week 10]</li>
+        <li>Using large language models as a coding copilot (<a href="https://course.cse.ust.hk/comp5111/slides/40-LLM.pdf">slides</a>)" [week 10]</li>
+        <li><font face="helvetica">Vulnerability analysis 
+            (<a href="https://course.cse.ust.hk/comp5111/slides/25-Vulnerabilities.pdf">slides</a>) <!-- / video:
+            <a href="http://www.cse.ust.hk/~scc/csd_only/vulnerability-1.mp4" target="_blank">part-1</a>, 
+            <a href="http://www.cse.ust.hk/~scc/csd_only/vulnerability-2.mp4" target="_blank">part-2</a> & 
+            <a href="http://www.cse.ust.hk/~scc/csd_only/vulnerability-3.mp4" target="_blank">part-3</a>)--> [week 
+            11]</font></li>
+        <li style="font-style: italic"><span class="auto-style2">Experimentation and research methodology 
+            (<a href="https://course.cse.ust.hk/comp5111/slides/27-Experimentation.pdf">slides</a>) <!-- / video:
+            <a href="http://www.cse.ust.hk/~scc/csd_only/Empirical-1.mp4" target="_blank">part-1</a> & 
+            <a href="http://www.cse.ust.hk/~scc/csd_only/Empirical-2.mp4" target="_blank">part-2</a>)--> [week 11] </span><em class="auto-style2">// 
+            Optional, will be covered if time allows</em><span class="auto-style2"></span></li>
+        <!-- <li>Concurrency-based approach (<a href="slides/28-Concurrency.pdf">slides</a>) 
+        <em>// Optional, will be covered only if time allows</em></li> -->
+            
+        <!-- <li>
+<font face="helvetica">
+            Review (<a href="slides/30-review.pdf">slides</a>)&nbsp; [week 11]</font></li> -->
+        <li>Presentations [weeks 12, 13]</li>
+        </ul>
+    </font>
+    </blockquote>
+<hr>
+<font face="helvetica">
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="helvetica">Coursework</font></b></big></nobr></td>
+</tr>
+</tbody></table></font>
+<blockquote>
+<font face="helvetica">
+<h3>Programming Assignments</h3>
+<h4>Tutorial: Assignment 1 Introduction and Soot Tutorial (Feb 14)</h4>
+<p>
+<a href="https://github.com/CastleLab/COMP5111-2024Spring-Assignments-Students/blob/asn1/tutorials/COMP5111_24S_workshop_songqiang_Feb1_ForStuPreview.pdf">slides</a>
+<a href="https://course.cse.ust.hk/comp5111/assignments_2024S/soot-example.zip">soot example project</a>
+</p>
+<h4>Assignment 1 is <a href="https://github.com/CastleLab/COMP5111-2024Spring-Assignments-Students/tree/asn1">here</a>. </h4>
+<p>
+    <a href="https://github.com/CastleLab/COMP5111-2024Spring-Assignments-Students/tree/asn1/Assignment1_FAQ.md">Assignment1 FAQ</a>;
+    <a href="https://soot-oss.github.io/soot/">Soot Document</a>;
+Submit through <a href="https://canvas.ust.hk/courses/54699/assignments/325279">Canvas</a> before 
+    <span class="style3">11:55pm 
+        March 16th</span>.
+</p>
+<h4>Assignment 2 (to be released)</h4>
+
+    <em>Bonus point policy:
+    <ul>
+    <li><strong>Objective</strong>: Encourage students to further explore beyond the required tasks.</li>
+    <li><strong>Means</strong>: When students have completed a bonus task in the assignment, they will get the bonus points accordingly.</li>
+    <li><strong>Bonus scheme</strong>: Be used as a "safety blanket" on the assignments capped by the maximum score of 10. It motivates hard-working students without sacrificing the less hard-working students.</li>
+<li><strong>Examples</strong>:
+If a student got 95 out of 100% for the specified tasks in an assignment, but the student got 8% bonus, the final score will be: MIN(95+8, 100) = 100%.
+If a student got 100 out of 100% and got 0% bonus, the final score will be: MIN(100+0, 100) = 100%.</li>
+    </ul>
+    </em>
+
+    <em>Note: <strong>All assignments MUST be submitted by their deadlines 
+    to the Canvas; otherwise no marks are given unless prior approval has been sought 
+    from the instructor.</strong> 
+<!--	Guides to CASS are available
+    <a href="http://cssystem.cs.ust.hk/home.php?docbase=UGuides/cass&amp;req_url=UGuides/cass/student.html">
+    here</a>. -->You are prohibited from using generative artificial intelligence (AI) to produce any materials or content for the reading assignments in this course. All programs and documents that a student submits for grading must represent the results of the student's own 
+        <strong>independent work</strong>. Students who are involved (including the copier and the helper) in an incident of plagiarism will receive a failing grade for the course and the incident will be reported for appropriate disciplinary actions. We will use a software tool to check your codes with others' programs, and even with previous assignments of this course. The tool is hard to beat. The suspected cases will be further examined by the instructors and the teaching assistant. Please also refer to the 
+        <a href="https://acadreg.ust.hk/generalreg.html#b">HKUST's regulations for student conduct and academic integrity</a>.</em>
+    
+    <p><em>"ALL OF THE FOLLOWING ARE CONSIDERED PLAGIARISM: turning in someone else's work 
+            as your own; adapting words or ideas from someone else without giving credit; 
+            failing to put a quotation in quotation marks; giving incorrect information 
+            about the source of a quotation; changing programs but copying the structure of 
+            a source without giving credit; and copying so many words or ideas from a source 
+            that it makes up the majority of your work, whether you give credit or not." ... 
+            extracted and adapted from</em> <a href="http://www.plagiarism.org/plagiarism-101/what-is-plagiarism/"><em>http://www.plagiarism.org/plagiarism-101/what-is-plagiarism/</em></a><em>.
+    
+        </em></p><p>
+        <em><strong>Honor Code</strong>: At the time you submit a course assignment, you have agreed to the declaration - "I have completed the submitted assignment in only my own work without using automatic literature summarization tools such as ChatGPT or Copilot. I have not engaged in any dishonesty in completing the assessment. I have not shared and will not share any parts of the solutions of the assessment on any website, via emails, photocopying or by other means."</em>
+    </p><hr>
+<h3>Reading Assignment: Report, Presentation and Participation</h3>
+In this course, each student will need to read a paper from the reading list, give a presentation and submit a report of the paper following the report 
+        template available <a href="https://course.cse.ust.hk/comp5111/Reading_Report_Template.docx"> here</a> (<a href="https://course.cse.ust.hk/comp5111/readings/Research%20Pattern.pdf">common research patterns</a>). 
+    <br><br>
+    <strong>Note 1</strong>: We use Canvas for reading assignment. Contact with TA if you have trouble with Canvas.<br>
+    <strong>Note 2</strong>: The date for presentation might be changed subject to the number of students enrolled, etc.<br>
+    <strong>Note 3</strong>: The reading report and presenttation must be exclusive to this course. You CANNOT re-use the report/presentation from another course. You CANNOT re-use your assignment in previous years. 
+    <br><br>
+    The following is a set of deliverables required:
+<ol>
+<li>Select a technical research paper from the reading list below by <span class="style3"> March 2</span>. 
+    <ol type="a"><li>Please login to Canvas, choose 'discussion' from left navigation bar, then click '+ Discussion' to create a new discussion topic.</li>
+    <li>Please name the new discussion topic according to "Student Name (Last name_First name)-Paper Name-Conference". For example, "LI_Meiziniu-An Empirical Study of Refactorings and Technical Debt in Machine Learning Systems-ICSE'21".</li>
+    <li>In the discussion content of the created topic, the student should put down (a) his/her name, (b) paper title and authors, (c) full citation reference, and (d) the paper abstract. Later the student needs to complete and post the reading report under the discussion topic. </li>
+    <li>Make sure the created topic is public and viewable till the course end. There is no need to change other options.</li>
+</ol>
+</li>
+<li>Update this <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/sccheung_connect_ust_hk/ERrOzfxjDPxDnN7RKy_4768BaHbA5qZxJ-sAIfIVqV259w?e=eygHMY"> MS Excel Spreadsheet</a> by <span class="style3">
+    March 2</span> (Contact TA if the spreadsheet cannot be accessed). 
+    Failure to mark a timeslot and select a valid paper by <font face="helvetica"> <span class="style3">
+    March 2</span></font> is subject to a penalty of 3 points out of the total points of reading assignment.<br>
+    <em>Note: If a student's selected paper collides with that has already been selected by another classmate, the student 
+    will be asked to select another one</em>.</li>
+<li>Submit Reading Report by <span class="style3">April 10</span>. 
+    <ol type="a">
+    <li>Submit the reading report to Canvas.</li>
+    <li>Post the same reading report to the discussion topic created previously at Canvas. </li>
+    </ol></li>
+<li>Read other's discussion topic and leave comments by <span class="style3">April 21</span>, the day before the first presentation. 
+    <ol type="a">
+        <li>This is part of grading scheme.</li>
+        <li>Use the reply function in Canvas</li>
+        <li>A student can ask questions/clarification, propose your suggestions, etc., on other classmates' discussion topic.</li>
+        <li>When a student leaves comments, please ensure the referred sentences, like 'Section XX, para XX' are clearly quoted. </li>
+        <li>Students are also encouraged to reply others' comments. </li>
+        <li>Samples of comments and replies by classmates in earlier offerings are available <a href="https://course.cse.ust.hk/comp5111/readings/Question-Samples.pdf">here</a> for your reference.</li>
+        <li>Students submit their presentation slides and can optionally submit a report to discuss specific issues encountered 
+            when discussing with classmastes on Canvas for our consideration by
+            <span class="style3">May 10</span>
+    </li></ol>
+</li>
+<li>Here are some Reading report samples (<a href="https://course.cse.ust.hk/comp5111/readings/Report-Sample-1.pdf">sample 1</a>, 
+    <a href="https://course.cse.ust.hk/comp5111/readings/Report-Sample-2.pdf">sample 2</a>, 
+    <a href="https://course.cse.ust.hk/comp5111/readings/Report-Sample-3.pdf">sample 3</a>).</li>
+<li>Presentation on <span class="style3">
+        April 22 (Mon), Apr 24 (Wed), Apr 29 (Mon), May 4 (Sat), May 8 (Wed)</span>. 
+        <br><em>Note</em>: Students are encourage to ask questions during the Q&amp;A (See grading scheme). 
+    Students are required to send an email to TA and tell him how many questions have been asked and what they are after each lecture. </li>
+<li>Each presentation lasts 10 minutes plus 5 minutes Q&amp;A. Please mark your slot at the
+        <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/sccheung_connect_ust_hk/ERrOzfxjDPxDnN7RKy_4768BaHbA5qZxJ-sAIfIVqV259w?e=eygHMY">
+        MS Excel Spreadsheet</a> (First Come First Mark).
+        <a href="http://www.slideshare.net/thecroaker/death-by-powerpoint">Here</a> are 
+        useful pieces of advice to prepare a presentation.</li>
+<li><a href="https://course.cse.ust.hk/comp5111/reading.html">Grading scheme</a></li>
+<li>Advice in technical <a href="https://homes.cs.washington.edu/~mernst/advice/write-technical-paper.html">writing</a> and <a href="https://homes.cs.washington.edu/~mernst/advice/giving-talk.html">presentation</a>.</li>
+</ol>  
+<hr>
+<h3>Reading list <span class="style1">(Choose a</span> <span class="style2">10~14 
+    or more pages</span> <span class="style1">technical research paper</span> <span class="style1">from the following list. The selected paper cannot be an experience, new ideas, 
+    doctoral symposium, tool demonstration or workshop paper. Your chosen paper must differ from those chosen by your classmates or earlier 
+    classmates. Please download the chosen paper at our digital library if its pre-print is not available at the linked website. Please feel free to email us when you have doubt if a selected paper falls into the criteria.)</span></h3>
+<ul>
+    <li>ICSE 2024
+        <a href="https://conf.researchr.org/track/icse-2024/icse-2024-technical-track#event-overview">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages) </li>
+    <li>ESEC/FSE 2023 <a href="https://dblp.org/db/conf/sigsoft/fse2023">
+        <strong>Technical Research Track</strong> Papers</a> (only select 10~14 page papers from Main Research Track)</li>
+    <li>ASE 2023 <a href="https://dblp.org/db/conf/kbse/ase2023"><strong>Technical Research Track</strong> Papers</a> 
+            (only select 10~14 page papers in Main Track)<font face="helvetica"></font></li><font face="helvetica">
+    <li>ICSE 2023
+        <a href="https://conf.researchr.org/track/icse-2023/icse-2023-technical-track#event-overview">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages) </li>
+    <li>ISSTA 2023 <a href="https://dblp.org/db/conf/issta/issta2023.html">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages)</li>
+    <li>PLDI 2023 <a href="https://pldi23.sigplan.org/track/pldi-2023-pldi#event-overview"><strong>Technical Research Track Papers</strong></a> (only select papers with over 20 pages)</li>
+    <li>OOPSLA 2023
+        <a href="https://dblp.org/db/journals/pacmpl/pacmpl7.html#nrOOPSLA1">
+        <strong>Technical Research Track</strong> Papers #1</a> <a href="https://dblp.org/db/journals/pacmpl/pacmpl7.html#nrOOPSLA2">
+        <strong>Technical Research Track</strong> Papers #2</a> (only select papers with 30 or more pages)</li>
+    <!-- <li>ASE 2022 <a href="https://dblp.org/db/conf/kbse/ase2022"><strong>Technical Research Track</strong> Papers</a> 
+            (only select 10~14 page papers in Main Track)</li>
+    <li>ESEC/FSE 2022 <a href="https://dblp.org/db/conf/sigsoft/fse2022">
+        <strong>Technical Research Track</strong> Papers</a> (only select 10~14 page papers from Main Research Track)</li>
+    <li>ICSE 2022
+        <a href="https://dblp.org/db/conf/icse/icse2022">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages) </li>
+    <li>ISSTA 2022 <a href="https://dblp.org/db/conf/issta/issta2022.html">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages)</li>
+    <li>PLDI 2022
+        <a href="https://dblp.org/db/conf/pldi/pldi2022">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 14 or more pages)</li>
+    <li>OOPSLA 2022
+        <a href="https://dblp.org/db/journals/pacmpl/pacmpl6.html#nrOOPSLA1">
+        <strong>Technical Research Track</strong> Papers #1</a> <a href="https://dblp.org/db/journals/pacmpl/pacmpl6.html#nrOOPSLA2">
+        <strong>Technical Research Track</strong> Papers #2</a> (only select papers with 30 or more pages)</li>
+    
+    <li>ESEC/FSE 2021 <a href="https://dblp.org/db/conf/sigsoft/fse2021">
+        <strong>Technical Research Track</strong> Papers</a> (only select 10~14 page papers from Main Research Track)</li>
+    <li>ISSTA 2021
+        <a href="https://www.sigsoft.org/resources/opentoc/ISSTA-21toc.html">
+        <strong>Technical Research Track</strong> Papers</a> (<font face="helvetica">only 
+        select papers with 10~14 pages</font>)</li>
+    <li>ICSE 2021
+        <a href="https://dblp.org/db/conf/icse/icse2021">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages)</li>
+    <li>ASE 2021 <a href="https://dblp.org/db/conf/kbse/ase2021"><strong>Technical Research Track</strong> Papers</a> 
+            (only select 10~14 page papers in Main Track)</li>
+    <li>PLDI 2021
+        <a href="https://dblp.org/db/conf/pldi/pldi2021">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 14 or more pages)</li>
+    <li>OOPSLA 2021
+        <a href="https://dblp.org/db/journals/pacmpl/pacmpl5.html#nrOOPSLA">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 14 or more pages)</li>
+    <li>ESEC/FSE 2020 <a href="https://dblp.org/db/conf/sigsoft/fse2020">
+        <strong>Technical Research Track</strong> Papers</a> (only select 10~14 page papers from Main Research Track)</li>
+    <li>ISSTA 2020 <a href="https://www.sigsoft.org/resources/opentoc/ISSTA2020-TOC.html">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages)</li>
+    <li>ICSE 2020
+        <a href="https://dblp.org/db/conf/icse/icse2020">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 10~14 pages) </li>
+    <li>ASE 2020 <a href="https://dblp.org/db/conf/kbse/ase2020"><strong>Technical Research Track</strong> Papers</a> 
+        (only select papers in Main Track) </li>
+    <li>PLDI 2020
+        <a href="https://dblp.org/db/conf/pldi/pldi2020">
+        <strong>Technical Research Track</strong> Papers</a> (only select papers with 14 or more pages)</li>
+-->
+</font></ul><font face="helvetica">
+    </font></font></blockquote><font face="helvetica"><font face="helvetica">
+
+<hr>
+<font face="helvetica">
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="helvetica">Marking Scheme</font></b></big></nobr></td>
+</tr>
+</tbody></table></font>
+<blockquote>
+The course will be evaluated based on a combination of 
+    participation, assignments, and examination. The mark breakdown is as follows. <p>
+<!--    <font face="Arial">Note: To receive 0.4 point in lecture participation, students need to: (1) attend over 
+    35 minutes in a lecture, AND (2) actively participate in class discussion.&nbsp; </font>&nbsp;<p>
+-->
+<table border="1" cellspacing="1" cellpadding="5">
+<tbody><tr><td> &nbsp; </td><td>Assessment items</td><td>Contribution</td></tr>
+<!--<tr><td>1.</td><td>Participation in online lectures (excluding reading report presentations)</td><td>
+    0%</td></tr> -->
+<tr><td>1</td><td>Programming Assignments</td> <td class="auto-style3">20%</td></tr>
+<tr><td>2</td><td>Reading Assignment: report, presentation &amp; participation</td><td class="auto-style3">
+    10%</td></tr>
+<!-- <tr><td>5.</td><td>Final examination (or an additional assignment depending on later 
+    updates from University)</td><td>25%</td></tr> -->
+<tr><td>3</td><td>Examination</td><td class="auto-style3">
+    70%</td></tr>
+</tbody></table>
+</p></blockquote>
+<hr>
+<font face="helvetica">
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="helvetica">Useful Links</font></b></big></nobr></td>
+</tr>
+</tbody></table></font>
+<ul>
+    <li><a href="https://course.cse.ust.hk/comp5111/self-assessment-center.html">Self Assessment Center</a></li>
+    <li><a href="http://junit.sourceforge.net/javadoc/">JUnit API Documentation</a></li>
+    <li><a href="https://www.youtube.com/watch?v=wEhu57pih5w&amp;feature=relmfu">Google Tech Talk on Unit Testing</a></li>
+    <li><a href="http://www.eclemma.org/userdoc/index.html">EclEmma User Guide</a></li>
+    <li>If you fail to install Pitclipse plugin through Eclipse Market, use this update site in Eclipse to install Pitclipse software: <a href="https://pitest.github.io/pitclipse-releases/">https://pitest.github.io/pitclipse-releases/</a></li>
+    <!-- <li><a href="http://www.stpmag.com/">Free Online Magazine on Software Testing written by Practitioners</a></li> -->
+    <li><a href="http://www.se-radio.net/">Software Engineering Radio</a></li>
+</ul>
+<hr>
+<font face="helvetica">
+<table border="0" hspace="4" cellspacing="2" width="100%" cellpadding="3">
+<tbody><tr bgcolor="#e0e0e8">
+<td width="100%"><nobr><big><b><font face="helvetica">References</font></b></big></nobr></td>
+</tr>
+</tbody></table></font>
+<ul><li>Lecture notes.</li>
+    <li>Conferences: Proceedings of ICSE, FSE, PLDI, OOPSLA, ISSTA and ASE.</li>
+    <li>Journals: ACM TOSEM &amp; IEEE TSE.</li>
+<li>Software Engineering, Ivan Marsic, Rutgers University, 2012. (<a href="https://course.cse.ust.hk/comp5111/Course/Notes/book-SE_marsic.pdf">Download here</a>)</li>
+    <li>Introduction to Software Testing, Paul Ammann and Jeff Offutt, Cambridge University Press, 2008.</li>
+    <li>Software Testing and Analysis: Process, Principles and Techniques, Mauro Pezze and Michal Young, John Wiley and Sons, 2007.</li>
+    <li><a href="https://github.com/lancetw/ebook-1/blob/master/09_other/How-Google-Tests-Software.pdf">How Google Tests Software</a>, James A. Whittaker, Jason Arbon, Jeff Carollo, Addison-Wesley, 2012.</li>
+    <li>Head First Java, Kathy Sierra and Bert Bates, O'Reilly Media, Inc.</li>
+</ul>
+<hr>
+<p>
+
+</p><center><img src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/USTlogo-small.gif" height="74" width="95" align="bottom"> </center>
+    
+</font></font>
+<div id="joinContentApp" data-v-app=""><div data-v-02b265ec="" class="youdao_translator__popup-thumb_conatiner" id="popupThumbId" style="display: none;"><img data-v-02b265ec="" class="youdao_translator__icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/fe6bea567997dd4837a8ded07e2fe2bc.png"><div data-v-02b265ec="" class="search-click__box"></div><div data-v-02b265ec="" class="ai-click__box"></div><!----></div><div data-v-4c9d329a="" class="youdao_translator_popup-card_container youdao_translator_bg_main" id="popupCardId" style="display: none;"><div data-v-e861f71a="" data-v-4c9d329a="" class="youdao_translator_header-container youdao_translator_bg_header" id="popupCardHeader"><img data-v-e861f71a="" class="youdao_translator__title" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/c49e45610c39da122cfeefaeebd55428.svg"><div data-v-7e1231e7="" data-v-e861f71a="" class="youdao_translator_select-container"><div data-v-7e1231e7="" class="youdao_translator_current-selected"><div data-v-7e1231e7="" class="youdao_translator_selected youdao_translator_color_text_1">英汉互译</div></div></div><div data-v-e861f71a="" class="youdao_translator__options"><div data-v-e861f71a="" class="youdao_translator_pin-btn youdao_translator_fixed"><img data-v-e861f71a="" class="youdao_translator_pin-btn__icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/4cd15656f3223cfe3e270408a17a7d9a.svg"></div><div data-v-e861f71a="" class="youdao_translator_more-btn"><img data-v-e861f71a="" class="youdao_translator_more-btn_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/680c0e9d2181b21748b6e7de487dddd0.svg"></div><div data-v-e861f71a="" class="youdao_translator_close-btn"><img data-v-e861f71a="" class="youdao_translator_close-btn_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/cd386aa8b1162ba18e2e416d0d5cb185.svg"></div></div></div><div data-v-4c9d329a="" class="youdao_translator_popup-card_main"><div data-v-4c9d329a="" class="youdao_translator_search__popup"><div data-v-0a1fd56f="" data-v-4c9d329a="" class="youdao_translator_input-container" input="" style="--ebb987c8: auto; --6ce113ce: 220px; --e24983a6: 22px; --363ccf6a: 8px; --64f81e9a: #939599;"><input data-v-0a1fd56f="" class="youdao_translator_popcard_input youdao_translator_bg_main" id="searchInput" placeholder="请输入要翻译的内容" maxlength="500" show-word-limit="false" autocomplete="off"><div data-v-0a1fd56f="" class="youdao_translator_suffix"><!----><div data-v-0a1fd56f="" class="youdao_translator_input-options"><div data-v-0a1fd56f="" class="youdao_translator_search_input__count youdao_translator_color_text_3" style="display: none;">0 / 500</div><div data-v-0a1fd56f="" class="youdao_translator_search_input__clear" style="display: none;"><img data-v-0a1fd56f="" class="youdao_translator_search_input__clear__icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/cd386aa8b1162ba18e2e416d0d5cb185.svg"></div><div data-v-0a1fd56f="" class="youdao_translator_search_input__search"><img data-v-0a1fd56f="" class="youdao_translator_search_input__search__icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/c3537c6c57e37ac3f5511d5df34a24fb.svg"></div></div></div></div></div><div data-v-4c9d329a="" class="youdao_translator_popup-card_divider youdao_translator_color_bg_5"></div></div><div data-v-59d0bc3e="" class="youdao_translator__result-container"><div data-v-59d0bc3e="" class="youdao_translator__result-cell"><!----><!----><div data-v-582010bd="" data-v-59d0bc3e="" class="content"><img data-v-582010bd="" class="img no-input" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/4d2316e879f82970a7653ade60880e40.svg"><div data-v-582010bd="" class="tips youdao_translator_color_text_1">无输入内容</div></div></div></div><!----></div><div data-v-747da2c0="" class="youdao_aibox_popup-card_container light" id="aiboxCardId" style="display: none;"><div data-v-07bb1ac9="" data-v-747da2c0="" class="youdao_aibox_header_container"><img data-v-07bb1ac9="" class="youdao_aibox__logo" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/166a5b4dd1659f3103e7648500444e68.png"><img data-v-07bb1ac9="" class="youdao_aibox__beta" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/5368a48155d18c6a2ce8ab95f2715e1d.png"><div data-v-07bb1ac9="" class="youdao_translator__options"><div data-v-07bb1ac9="" class="remain-time">剩余免费次数: 9</div><div data-v-07bb1ac9="" class="svip-content"><div data-v-07bb1ac9="">SVIP无限畅享</div></div><div data-v-07bb1ac9="" class="youdao_translator_pin-btn youdao_translator_fixed"><img data-v-07bb1ac9="" class="youdao_translator_pin-btn__icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/4cd15656f3223cfe3e270408a17a7d9a.svg"></div><div data-v-07bb1ac9="" class="youdao_translator_more-btn"><img data-v-07bb1ac9="" class="youdao_translator_more-btn_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/bdf5306d6a3e47510977e09d72c05bd4.png"></div><div data-v-07bb1ac9="" class="youdao_translator_close-btn"><img data-v-07bb1ac9="" class="youdao_translator_close-btn_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/0abdc41f1336845de735e079b333b771.png"></div></div></div><div data-v-747da2c0="" class="youdao_aibox"><div data-v-747da2c0="" class="youdao_aibox_index"><div data-v-7c948ba6="" class="youdao-aibox_container" id="result-box"><div data-v-7c948ba6="" class="origin-area" id="origin-area"><div data-v-8af6108a="" data-v-7c948ba6="" class="origin" id="origin"><div data-v-8af6108a="" class="origin-header AI-color_bg_1"><div data-v-8af6108a="" class="origin-title color_text_3"><img data-v-8af6108a="" class="origin_title_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/fc2bee2dc9853010824265e3cf01e5c9.png"><span data-v-8af6108a="" class="color_text_1">你的文本：</span></div><div data-v-8af6108a="" class="origin-options"><div data-v-8af6108a="" class="origin-input_icon tips pron" style="display: none;"><div data-v-23d71922="" data-v-8af6108a="" class="youdao_translator__pronounce_comp pronounce"><a data-v-23d71922="" class="youdao_translator_pronounce" data-syncid="0_originInput" title="点击发音" href="javascript:;" style="width: 24px; height: 24px; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: transparent;"><svg class="youdao_translator_static-pronounce" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-23d71922=""><path d="M0.545908 5.3378L0.506694 10.6489C0.503005 11.1486 0.907016 11.5556 1.40667 11.5556H3.26438C3.65146 11.5556 4.02355 11.7052 4.30286 11.9732L6.80768 14.3764C7.44338 14.9863 8.5 14.5357 8.5 13.6548V10.6667V2.36388C8.5 1.48019 7.43775 1.03083 6.80359 1.64624L4.35654 4.02091C4.07664 4.29253 3.70195 4.44444 3.31192 4.44444H1.44588C0.95142 4.44444 0.549558 4.84335 0.545908 5.3378Z" stroke="#939599" stroke-linecap="round" stroke-linejoin="round" data-v-23d71922=""></path><path d="M13.2344 12.2188C14.3573 11.4535 15.1094 9.875 15.1094 8C15.1094 6.125 14.3284 4.554 13.2344 3.78125" stroke="#939599" stroke-width="1.125" stroke-linecap="round" data-v-23d71922=""></path><path d="M10.9844 9.87891C11.5458 9.49626 11.9219 8.79571 11.9219 7.99488C11.9219 7.20649 11.5314 6.51528 10.9844 6.12891" stroke="#939599" stroke-linecap="round" data-v-23d71922=""></path></svg><svg class="youdao_translator_voice-pronounce" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-23d71922=""><path d="M0.545908 5.3378L0.506694 10.6489C0.503005 11.1486 0.907016 11.5556 1.40667 11.5556H3.26438C3.65146 11.5556 4.02355 11.7052 4.30286 11.9732L6.80768 14.3764C7.44338 14.9863 8.5 14.5357 8.5 13.6548V10.6667V2.36388C8.5 1.48019 7.43775 1.03083 6.80359 1.64624L4.35654 4.02091C4.07664 4.29253 3.70195 4.44444 3.31192 4.44444H1.44588C0.95142 4.44444 0.549558 4.84335 0.545908 5.3378Z" stroke="#FB4A3E" stroke-linecap="round" stroke-linejoin="round" data-v-23d71922=""></path><path class="youdao_translator__audio__01" d="M13.2344 12.2188C14.3573 11.4535 15.1094 9.875 15.1094 8C15.1094 6.125 14.3284 4.554 13.2344 3.78125" stroke="#FB4A3E" stroke-width="1.125" stroke-linecap="round" data-v-23d71922=""></path><path class="youdao_translator__audio__00" d="M10.9844 9.87891C11.5458 9.49626 11.9219 8.79571 11.9219 7.99488C11.9219 7.20649 11.5314 6.51528 10.9844 6.12891" stroke="#FB4A3E" stroke-linecap="round" data-v-23d71922=""></path></svg></a></div></div><div data-v-8af6108a="" class="tips fold" style="display: none;"><img data-v-8af6108a="" class="icon_unfold" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/fd8fd985ce581ba3eb5a923ea34a60f6.png"></div></div></div><textarea data-v-8af6108a="" class="origin-text color_text_1 no_text" rows="1" autofocus=""></textarea><div data-v-8af6108a="" class="origin-footer" style="display: none;"><div data-v-8af6108a="" class="limit AI-color_bg_1" style="color: rgb(141, 149, 181);">0/2000</div><img data-v-8af6108a="" class="icon_clear" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/61a331a4f463d6cf0872c1cd7d075489.png"></div></div></div><div data-v-7c948ba6="" class="scroll-area" style="max-height: 190px;"><div data-v-6ad165fe="" data-v-7c948ba6="" class="result current-result" currentdata="[object Object]"><div data-v-6ad165fe="" class="result-header AI-color_bg_1"><div data-v-6ad165fe="" class="result_title color_text_3"><img data-v-6ad165fe="" class="result_focus_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/2a5280256237bc77e8a757302c91ad82.png" style=""><img data-v-6ad165fe="" class="result_title_icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/7a6dfcbddf3e725d4adeed95e85d1591.png"><span data-v-6ad165fe="">句子润色-专业化：</span></div><div data-v-6ad165fe="" class="result-options"><div data-v-6ad165fe="" class="result-options_icon tips pron"><div data-v-23d71922="" data-v-6ad165fe="" class="youdao_translator__pronounce_comp pronounce"><a data-v-23d71922="" class="youdao_translator_pronounce" data-syncid="0_65d4c61bd625d237b27e847f" title="点击发音" href="javascript:;" style="width: 24px; height: 24px; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: transparent;"><svg class="youdao_translator_static-pronounce" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-23d71922=""><path d="M0.545908 5.3378L0.506694 10.6489C0.503005 11.1486 0.907016 11.5556 1.40667 11.5556H3.26438C3.65146 11.5556 4.02355 11.7052 4.30286 11.9732L6.80768 14.3764C7.44338 14.9863 8.5 14.5357 8.5 13.6548V10.6667V2.36388C8.5 1.48019 7.43775 1.03083 6.80359 1.64624L4.35654 4.02091C4.07664 4.29253 3.70195 4.44444 3.31192 4.44444H1.44588C0.95142 4.44444 0.549558 4.84335 0.545908 5.3378Z" stroke="#939599" stroke-linecap="round" stroke-linejoin="round" data-v-23d71922=""></path><path d="M13.2344 12.2188C14.3573 11.4535 15.1094 9.875 15.1094 8C15.1094 6.125 14.3284 4.554 13.2344 3.78125" stroke="#939599" stroke-width="1.125" stroke-linecap="round" data-v-23d71922=""></path><path d="M10.9844 9.87891C11.5458 9.49626 11.9219 8.79571 11.9219 7.99488C11.9219 7.20649 11.5314 6.51528 10.9844 6.12891" stroke="#939599" stroke-linecap="round" data-v-23d71922=""></path></svg><svg class="youdao_translator_voice-pronounce" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-23d71922=""><path d="M0.545908 5.3378L0.506694 10.6489C0.503005 11.1486 0.907016 11.5556 1.40667 11.5556H3.26438C3.65146 11.5556 4.02355 11.7052 4.30286 11.9732L6.80768 14.3764C7.44338 14.9863 8.5 14.5357 8.5 13.6548V10.6667V2.36388C8.5 1.48019 7.43775 1.03083 6.80359 1.64624L4.35654 4.02091C4.07664 4.29253 3.70195 4.44444 3.31192 4.44444H1.44588C0.95142 4.44444 0.549558 4.84335 0.545908 5.3378Z" stroke="#FB4A3E" stroke-linecap="round" stroke-linejoin="round" data-v-23d71922=""></path><path class="youdao_translator__audio__01" d="M13.2344 12.2188C14.3573 11.4535 15.1094 9.875 15.1094 8C15.1094 6.125 14.3284 4.554 13.2344 3.78125" stroke="#FB4A3E" stroke-width="1.125" stroke-linecap="round" data-v-23d71922=""></path><path class="youdao_translator__audio__00" d="M10.9844 9.87891C11.5458 9.49626 11.9219 8.79571 11.9219 7.99488C11.9219 7.20649 11.5314 6.51528 10.9844 6.12891" stroke="#FB4A3E" stroke-linecap="round" data-v-23d71922=""></path></svg></a></div></div><div data-v-1e5b7faa="" data-v-6ad165fe="" class="more-box more-btn"><div data-v-1e5b7faa="" class="more-items"><div data-v-1e5b7faa="" class="more-items_icon action"><img data-v-1e5b7faa="" class="icon_img" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/76f5c19da2e8e8cedc08ebe14fa3edf2.png"></div><div data-v-1e5b7faa="" class="more-items_icon action cai"><img data-v-1e5b7faa="" class="icon_img" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/d9f4caff624f9768eae3c4ffe03ec5b9.png"></div><div data-v-1e5b7faa="" class="more-items_icon"><img data-v-1e5b7faa="" class="icon_img" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/086fbed91b6809497f6f6bcf0d141116.png"></div><div data-v-1e5b7faa="" class="more-items_icon"><img data-v-1e5b7faa="" class="icon_img" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/13368c5bbc5eef69952fa0f71cd5bb42.png"></div></div><div data-v-1e5b7faa="" class="more-btn"><img data-v-1e5b7faa="" class="icon_img icon_more" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/36996e45d6decaed039384435ec34693.png"></div></div></div><div data-v-6ad165fe="" class="result-options_icon tips del" style="display: none;"><img data-v-6ad165fe="" class="icon_delete" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/1001403cbadc56de636e41527b10e20c.png"></div></div><textarea data-v-6ad165fe="" class="result-text color_text_1" id="resultTextareaRef-65d4c61bd625d237b27e847f" style="height: 30px;"></textarea><div data-v-6ad165fe="" class="result-footer"><div data-v-6ad165fe="" class="left"><div data-v-6ad165fe="" class="btn copy AI-border_color_4 color_text_2">复制</div></div><div data-v-6ad165fe="" class="right" style=""><div data-v-6ad165fe="" class="limit" style="color: rgb(141, 149, 181);">670/2000</div><img data-v-6ad165fe="" class="icon_clear" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/12405c484a744f76ff737d357dc37592.png"></div></div><!----></div><!----></div><div data-v-7c948ba6="" class="youdao_ai_footer AI-color_text_3" id="result-footer"><span data-v-7c948ba6="" class="no_tips">你可以参考以下模版</span><img data-v-7c948ba6="" class="icon_right_down" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/1ac8af1acd1463893248c9dcdc4cdd53.png"></div></div><div data-v-5ec88791="" class="bottom-menu_container AI-color_bg_1" id="bottom-menu"><!----><img data-v-5ec88791="" class="bottom-menu_icon icon-left" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/3951a100431308a1af5c9bb694cd8c7e.png"><!----><!----><div data-v-5ec88791="" class="my-menu"><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">句子润色</div><img data-v-5ec88791="" class="more-icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/2590c2878f4ad37e124d9b8a42b94cf5.png"></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">语法纠错</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">翻译</div><img data-v-5ec88791="" class="more-icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/2590c2878f4ad37e124d9b8a42b94cf5.png"></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">单词百科</div><!----></div><div data-v-5ec88791="" class="my-menu-item"><div data-v-5ec88791="" class="name">写作模板</div><img data-v-5ec88791="" class="more-icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/2590c2878f4ad37e124d9b8a42b94cf5.png"></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">论文去重</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">代码分析</div><img data-v-5ec88791="" class="more-icon" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/2590c2878f4ad37e124d9b8a42b94cf5.png"></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">重点提炼</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">内容扩写</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">写作建议</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">智能回复</div><!----></div><div data-v-5ec88791="" class="my-menu-item disabled color_text_5"><div data-v-5ec88791="" class="name">prompt优化</div><!----></div></div><img data-v-5ec88791="" class="menu-mask" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/0ba2e8e239c935dec15abf1ae17ff731.png"><img data-v-5ec88791="" class="bottom-menu_icon icon-right" src="./COMP5111_ Fundamentals of Software Testing and Analysis_files/d596090b87ea41d16ca237ea62e7c311.png"></div><div data-v-93f28dd0="" class="bottom-input AI-color_bg_1" id="bottom-input"><div data-v-93f28dd0="" class="input-area"><input data-v-93f28dd0="" class="input" placeholder="输入你想要的写作模版..." maxlength="100"><div data-v-93f28dd0="" class="options"><!----><div data-v-93f28dd0="" class="icon" style="display: none;"><img data-v-93f28dd0="" class="icon_send_message" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAdBSURBVHgB7VhNbxtVFL33jSdVF6juL4g3rOsgsWBlV2LBAqmpBJuqqJMKRBdFchCsEK3DFgGm0KpU/XAkVLWVUB0hFmwad8M62cKC5BfUXSBK7HmX+/HeOF9tDXGaLvyk2JOZN2/OPffcc98YYDImYzIm4yAHwks+Xm1SteR8fQCu98cFbG+//lIGUG1S3XuokYMsR6h4B0SMlP+Wfv8MT26eW4KXZLz+OdVygjqDzHwO0+gACQiccOwJJQCPOLv9vgMN4I1PqYYp1HOijDxVnLBMLIuAmcGjRyBHgJ7ncyJ629d44QHUP+nXISmdyIFBA5VZKuAUsAAUlvmDhtp2nsEjJ4BFhA5Xtq/3QgJ4s8GgnTvhHZ5h0EeJUaMoBE0iAppZBmNZta5BeP0kxi054VTk8OIy8Pb5fp0Sx0zDGQZ0lOQk08y6UJkweJWFYHQ8IYL34X6GixKkxJKzxlzCaQC/CvsZwOw5kQczjQzaMWjByyiYcKWamQQ9RgEXAJOlgf/vMtFljq6qwaiGRDlyzOFw8N658Uvonff7dVdyNY/UYOBldQ5JP59wDEy1Ld/CvtEKQj8XJGdA56xzEE0GzNbpM1FLrAnUTFk2JJoEYG0sAZxm0MxGjQ8zXnrak+pUtUGqaSGZ9MA5Yd2uCxZh1+s86LEoWrSxseimDt3nc1VlWq570hpxzmKwRBDmvT0EMDdHNcJBnTFkvP60ALQiAy0xkiiMXpGGolUSVfBWmJYElVI3R15n8AST0qH7PKWqU/kjV9lptHpCUkZCBkJvpYX/rYjPnQ5MIzHovOJtTYi61m9QiwNlOsRQWKLFpwKXk+gcF2E+/+s3afetBlVynFoW/9fUxODRGphQT9q/JHt6+8puGHcN4KNTG5laHmKNqYXQW4CNQBkCCkEQBPAF06S+rtq3h8ts5+hxTn7hl+9KLZkk4DncZQ6yopIBMMlp9lBlqEnbtE4JaHWkABoCHvGWOQSBypJCs2HELqZWH6TaFuwUnENzrxpGDZidw1/KS6Xmz61SL4JPyC8zqooJXOtU0TM/WvS6OtqTpZA0KHR/jhQAl85FdggFr4UpJAsQis5hTwS7rro1Bi1N+fC+h7mnhZ+upN249uw5qvicwTPzUuhqq+pIugBKslGtP5aQmZZ8DPxgtAzwKpWIEcJmKqSYNQzWIb1NcMHpwiCdgrjWJ5q/90Ops3ndkx/SMUh8hy224o1xHD7HNgsShGYNLMUUJmi90c59kAy34wRhF8m0KIsqcGFViDBvVsbsWCtNi4H/f8z/L/y14WbuXdsK/t0PNqpJ4nldqoT70NbXjRqv7SAB48eeF5jxhkCu/fbl1GhFzME2+OYuM3Ak5s8FHxbmQvFu2oBJ5mEdqX988ebhte3rnT5Lx/ouX+a6KOMm2jVdagrqY7ofiul0YY41AF4fd3egYu7m8fXdqdUU8xlw+ccMcokXXQms6LZWsxMYUhaDTtvtneBPZRtVn+Rdvl52EO4rsodhDcEpSC27kX1hC4PLJbSzgcUx8hsZu1N14LBMlHPTSaZZR7J1sAbFf1NJqXL5Bq5vBs9bjAeyJ/Jq6bYz88qrsCquYHoX4u2Y57moHp0jRS49+NKDr9LGbrhG7sSt24UGu/Jx/r1BlZ9cZ7fSlj/o9+Vt6Vu5ljF4KiUP+FI5tAdpeACFBENzMlvWHEqhoovbEbLeBvoSAzng6BIadZAfLMXiVhrD616W/c1vVu4+u8ZRfQnxBEXBBiOIBuGKYytcJ4HpN4ILUlXpeVobewBpTp2oZ3EJfm2qNTIqp5BKH6mgN7cK4E3/3kAHZ7PNgwaoTGPhamFdm4s0gNL4M9C6c3iNmVpDy7i2+38GeZ1BzCrQwHYsUKc2SUMrjgwXdmnBuiLIcB/R4+4um7g9B6A3k18yYPynLyZ0kb+PCNDCqYZgzGHsoSgZwvCy4iD0hZCNKE09Blp5JgbYy/DYURDeDJu/q1HPoOds+7GlCcbAMJzjinahYboQnGUmNkno7VsArTtpV37q2Orhup1RCTmkL1hCTVdkgoZ9RLcHGHpLkJb5JoUiDxLbfRc6lgBkMJCOsaZMBweR1krNa+20eb2dLjCRJ0XLBphiA8PYBIvMaLasmON2xeW4jxICdaCHKhvAYTf1sHD1x3QhzrnRLnUGMJjha+smrJCtongBi05NxXunFTj6NdjPAPpPUrZTfKRS4IcmQIvf306b2+fJViOF/vEEcNWZZEz3W7cOxXYjWmjnytT+ZqDVwV4Og9f4gS1GMc8de+5pc69yENdvJTNWF0FyEAKA2DesgINbrT7v+SPvhcY9zmYbDf6t8EIuP8XouzVoa5PK9mHPxDlt372azD1rnT1n4P+Om+2pVk59ydx6tE99fSwciusrcc3nrXNgAciQuvCUSHG3zYlc7Mjs/X7+9uXh7vZp48AktH1kmfwAzLtbpEfulXSx/Yztw2RMxmRMxmSMbfwLb4dXV1Enh/8AAAAASUVORK5CYII="></div></div></div></div><!----></div></div><div class="toast"></div></div></div></body></html>
